@@ -34,17 +34,15 @@ public class ShowErrorServlet extends HttpServlet {
 			break;
 		}
 		case CONSTAINT.CONVERT_ERROR: {
-			request.getSession().setAttribute("message",
-					"Có lỗi xảy ra trong quá trình chuyển đổi, vui lòng kiểm tra và thử lại!");
+			request.getSession().setAttribute("message","Có lỗi xảy ra trong quá trình convert, vui lòng kiểm tra và thử lại!");
 			break;
 		}
 		case CONSTAINT.UPLOAD_ERROR: {
-			request.getSession().setAttribute("message",
-					"Có lỗi xảy ra trong quá trình upload file, vui lòng kiểm tra và thử lại!");
+			request.getSession().setAttribute("message","Có lỗi xảy ra trong quá trình upload, vui lòng kiểm tra và thử lại!");
 			break;
 		}
 		default:
-			request.getSession().setAttribute("message", "Có lỗi xảy ra, vui lòng kiểm tra lại!");
+			request.getSession().setAttribute("message", "Có lỗi xảy ra, vui lòng thử lại!");
 			break;
 		}
 

@@ -43,7 +43,7 @@ public class ConvertFileDAO {
 	public static void ChangeStatus(int fid, int fstatus) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://127.0.0.1:3306/pdf2word";
+			String url = "jdbc:mysql://127.0.0.1:3306/pdfword";
 			Connection con = (Connection) DriverManager.getConnection(url, "root", "");
 			Statement stmt = (Statement) con.createStatement();
 			String sql = "UPDATE uploadfile set fstatus = " + fstatus + " where fid = " + fid;

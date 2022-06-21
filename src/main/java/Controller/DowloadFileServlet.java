@@ -60,7 +60,7 @@ public class DowloadFileServlet extends HttpServlet {
 		    outStream.close();
 			
 		}else {
-			request.getSession().setAttribute("message", "File không thể tải xuống, vui lòng kiểm tra và thử lại!");
+			request.getSession().setAttribute("message", "File không thể tải or có lỗi xảy ra!");
 		}
 	}
 

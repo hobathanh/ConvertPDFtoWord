@@ -14,19 +14,21 @@
 	response.setHeader("Pragma", "no-cache");
 	response.setDateHeader("Expires", 0);
 
-	if (session.getAttribute("user") != null)
-		response.sendRedirect("HomePage.jsp");
+	/* if (session.getAttribute("user") != null)
+		response.sendRedirect("HomePage.jsp"); */
 	%>
+	
 	<%
 	if (session.getAttribute("message") != null) {
 	%>
-	<script>alert("<%=session.getAttribute("message")%>
-		")
+	<script>alert("<%=session.getAttribute("message")%>")
 	</script>
+	
 	<%
 	session.setAttribute("message", null);
 	}
 	%>
+	
 	<div class="form">
 		<h1>Đăng nhập</h1>
 		<form action="CheckLoginServlet" method="post" class="txt_contain">

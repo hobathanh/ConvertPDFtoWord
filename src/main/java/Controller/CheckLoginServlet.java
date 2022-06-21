@@ -22,22 +22,23 @@ public class CheckLoginServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
+			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
 		if (username.equals("") || password.equals("")) {
-			request.getSession().setAttribute("message","Tên đăng nhập và mật khẩu không được để trống!");
-			response.sendRedirect("LoginServlet");
+			request.getSession().setAttribute("message","Tài khoản hoặc mật khẩu không được để trống");
+			response.sendRedirect("Login.jsp");
 		} else {
 			if (CheckLoginBO.CheckLogin(username, password)) {
 				user user = GetUserBO.GetUser(username);
 				request.getSession().setAttribute("user", user);
 				request.getSession().setAttribute("message", "Đăng nhập thành công!");
 				response.sendRedirect("HomePage.jsp");
+
 			} else {
-				request.getSession().setAttribute("message","Vui lòng kiểm tra lại thông tin tài khoản!");
-				response.sendRedirect("LoginServlet");
+				request.getSession().setAttribute("message","Tài khoản và mật khẩu nhập không hợp lệ!");
+				response.sendRedirect("Login.jsp");
 			}
 		}
 	}

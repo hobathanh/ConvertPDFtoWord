@@ -12,13 +12,22 @@
 <link href="./css/UserProfileStyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<%
+	response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
 
+	/* if (session.getAttribute("user") != null)
+		response.sendRedirect("HomePage.jsp"); */
+	%>
+	
 	<%
 	if (session.getAttribute("message") != null) {
 	%>
-	<script>alert("<%=session.getAttribute("message")%>
-		")
+	<script>alert("<%=session.getAttribute("message")%>")
 	</script>
+	
 	<%
 	session.setAttribute("message", null);
 	}
