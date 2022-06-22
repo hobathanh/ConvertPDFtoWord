@@ -64,7 +64,7 @@
 					</div>
 					<div class="data">
 						<h4>Điện thoại</h4>
-						<p>0999-999-999</p>
+						<p>0XXX-XXX-XXX</p>
 					</div>
 				</div>
 			</div>
